@@ -19,7 +19,7 @@ class CreateSpecialisationsTable extends Migration
             $table->timestamps();
 
             $table->unsignedBigInteger('classe_id');
-            $table->foreign('classe_id')->references('classe_id')->on('classe');
+            $table->foreign('classe_id')->references('classe_id')->on('classes');
         });
     }
 

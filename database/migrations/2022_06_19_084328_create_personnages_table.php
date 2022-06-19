@@ -21,16 +21,16 @@ class CreatePersonnagesTable extends Migration
             $table->timestamps();
 
             $table->unsignedBigInteger('race_id');
-            $table->foreign('race_id')->references('race_id')->on('race');
+            $table->foreign('race_id')->references('race_id')->on('races');
 
             $table->unsignedBigInteger('armure_id');
-            $table->foreign('armure_id')->references('armure_id')->on('armure');
+            $table->foreign('armure_id')->references('armure_id')->on('armures');
 
             $table->unsignedBigInteger('classe_id');
-            $table->foreign('classe_id')->references('classe_id')->on('class');
+            $table->foreign('classe_id')->references('classe_id')->on('classes');
 
             $table->unsignedBigInteger('specialisation_id');
-            $table->foreign('specialisation_id')->references('specialisation_id')->on('specialisation');
+            $table->foreign('specialisation_id')->references('specialisation_id')->on('specialisations');
         });
     }
 
