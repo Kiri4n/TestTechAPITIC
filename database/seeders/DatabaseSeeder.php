@@ -17,7 +17,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             armuresSeeder::class,
             classesSeeder::class,
-            racesSeeder::class
+            racesSeeder::class,
+            specialisationsSeeder::class
         ]);
     }
 }
