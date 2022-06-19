@@ -15,16 +15,16 @@ class racesSeeder extends Seeder
     public function run()
     {
         DB::table('races')->insert([
-            'nome' => 'Humain'
+            'nom' => 'Humain'
         ]);
         DB::table('races')->insert([
-            'nome' => 'Elfe'
+            'nom' => 'Elfe'
         ]);
         DB::table('races')->insert([
-            'nome' => 'Nain'
+            'nom' => 'Nain'
         ]);
         DB::table('races')->insert([
-            'nome' => 'Kobold'
+            'nom' => 'Kobold'
         ]);
     }
 }
