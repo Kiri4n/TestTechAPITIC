@@ -3,7 +3,6 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,14 +13,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('armures')->insert([
-            'materiau' => 'Tissu'
-        ]);
-        DB::table('armures')->insert([
-            'materiau' => 'Cuire'
-        ]);
-        DB::table('armures')->insert([
-            'materiau' => 'Métal'
+        // \App\Models\User::factory(10)->create();
+        $this->call([
+            armuresSeeder::class
         ]);
     }
 }
