@@ -15,16 +15,20 @@ class classesSeeder extends Seeder
     public function run()
     {
         DB::table('classes')->insert([
-            'nom' => 'Guerrier'
+            'nom' => 'Guerrier',
+            'couleur' => '#BC8A5E'
         ]);
         DB::table('classes')->insert([
-            'nom' => 'Mage'
+            'nom' => 'Mage',
+            'couleur' => '#73C1E6'
         ]);
         DB::table('classes')->insert([
-            'nom' => 'Prêtre'
+            'nom' => 'Prêtre',
+            'couleur' => '#FFDB80'
         ]);
         DB::table('classes')->insert([
-            'nom' => 'Chasseur'
+            'nom' => 'Chasseur',
+            'couleur' => '#ABC965'
         ]);
     }
 }
