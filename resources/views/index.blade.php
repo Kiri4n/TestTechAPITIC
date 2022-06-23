@@ -26,18 +26,58 @@
             <th>Armure</th>
             <th>Détail</th>
             <th>Propriétaire</th>
+            <th></th>
         </tr>
         </thead>
         <tbody>
-        <tr>
             <?php
+            foreach ($personnages as $personnage){
+                echo('<tr>');
+                    echo("<td>{$personnage->pseudo}</td>");
+                    echo("<td style=\"background-color: {$personnage->classe->couleur}\">{$personnage->race->nom}</td>");
+                    echo("<td style=\"background-color: {$personnage->classe->couleur}\">{$personnage->pv}</td>");
+                    echo("<td style=\"background-color: {$personnage->classe->couleur}\">{$personnage->armure->materiau}</td>");
+                    echo("<td style=\"background-color: {$personnage->classe->couleur}\">TODO</td>");
+                    echo("<td style=\"background-color: {$personnage->classe->couleur}\">{$personnage->proprietaire}</td>");
+                    echo("<td>
+                        <button
+                            type=\"button\"
+                            class=\"btn btn-primary mx-3 my-2\"
+                        >Editer</button>
 
+                        <button
+                            type=\"button\"
+                            class=\"btn btn-danger\"
+                            data-bs-toggle=\"modal\"
+                            data-bs-target=\"#deleteModal\"
+                        >Supprimer</button>
+                    </td>");
+                echo('</tr>');
+            }
             ?>
-        </tr>
         </tbody>
     </table>
 </div>
-    <script src="{{asset('js/app.css')}}"></script>
+
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modal-title">❗ ATTENTION ❗</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Etes vous sures de vouloir supprimer ce personnage ?</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                <button type="button" class="btn btn-danger">Supprimer</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="{{asset('js/app.css')}}"></script>
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 

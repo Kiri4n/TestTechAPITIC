@@ -9,7 +9,7 @@ class indexController extends Controller
     public function index(){
 
         return view('index',[
-            'materiauxArmure' => armureController::getAllMateriaux()
+            'personnages' => personnageController::getAllPersonnage()
         ]);
     }
 }
