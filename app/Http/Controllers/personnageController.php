@@ -10,4 +10,8 @@ class personnageController extends Controller
     public static function getAllPersonnage(){
         return personnage::all();
     }
+
+    public static function deletePersonnage(int $id){
+        personnage::find($id)->delete();
+    }
 }
