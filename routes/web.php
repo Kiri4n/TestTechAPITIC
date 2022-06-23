@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\indexController;
+use App\Http\Controllers\personnageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,4 +15,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [indexController::class, 'index']);
+Route::get('/', [indexController::class, 'index'])->name('index');
+Route::post('/', [personnageController::class, 'store'])->name('personnage.store');

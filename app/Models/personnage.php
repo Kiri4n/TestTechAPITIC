@@ -11,6 +11,8 @@ class personnage extends Model
 
     protected $primaryKey = 'personnage_id';
 
+    protected $fillable = ['pseudo', 'pv', 'race_id', 'armure_id', 'classe_id', 'specialisation_id', 'proprietaire'];
+
     public function armure(){
         return $this->hasOne(armure::class, 'armure_id', 'armure_id');
     }

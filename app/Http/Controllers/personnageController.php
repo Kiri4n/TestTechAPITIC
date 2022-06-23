@@ -18,4 +18,17 @@ class personnageController extends Controller
     public static function getPersonnage(int $id){
         return personnage::find($id);
     }
+
+    public function store(Request $request){
+        personnage::create([
+            'pseudo' => $request->pseudo,
+            'pv' => $request->pv,
+            'race_id' => $request->race,
+            'armure_id' => $request->armure,
+            'classe_id' => $request->classe,
+            'specialisation_id' => $request->specialisation,
+            'proprietaire' => 'Tom'
+        ]);
+        return redirect('/');
+    }
 }
