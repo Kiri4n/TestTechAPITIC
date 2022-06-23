@@ -14,4 +14,8 @@ class personnageController extends Controller
     public static function deletePersonnage(int $id){
         personnage::find($id)->delete();
     }
+
+    public static function getPersonnage(int $id){
+        return personnage::find($id);
+    }
 }
