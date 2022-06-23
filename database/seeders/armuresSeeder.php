@@ -15,6 +15,9 @@ class armuresSeeder extends Seeder
     public function run()
     {
         DB::table('armures')->insert([
+            'materiau' => 'Aucune'
+        ]);
+        DB::table('armures')->insert([
             'materiau' => 'Tissu'
         ]);
         DB::table('armures')->insert([
