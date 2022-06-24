@@ -1,15 +1,3 @@
-function displayPersonnage(listPersonnages){
-    let tbody = document.getElementsByName('tbody');
-    for (let personnage of listPersonnages) {
-        let tr = document.createElement('tr');
-        let pseudo = personnage.pseudo;
-        let race = personnage.race;
-    }
-}
-function storePersoToDelete(persoIDToDelete){
-    document.getElementById("persoIDToDelete").value = persoIDToDelete.toString();
-}
-
 function getInfoPersonnage(persoID){
     for (let personnage of listPersonnages) {
         if(personnage.personnage_id === persoID){
@@ -20,7 +8,6 @@ function getInfoPersonnage(persoID){
 
 function fillForm(persoID){
     const infoPerso = getInfoPersonnage(persoID);
-    console.log(infoPerso);
     let form = document.getElementById("editForm").elements;
 
     // personnage_id:
@@ -62,9 +49,3 @@ function fillForm(persoID){
         }
     }
 }
-
-
-
-
-let listePersonnagesString = document.currentScript.getAttribute('listPersonnages').replaceAll("\\","");
-let listPersonnages = JSON.parse(listePersonnagesString.slice(1,listePersonnagesString.length-1));

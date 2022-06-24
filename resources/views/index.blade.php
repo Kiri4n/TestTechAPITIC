@@ -79,11 +79,18 @@
 @include('modals.formEditPersoModal')
 @include('modals.deleteModal')
 
-<script src="{{asset('js/app.js')}}"></script>
+{{--<script--}}
+{{--    type="text/javascript"--}}
+{{--    src="{{asset('js/app.js')}}"--}}
+{{--    listSpecialisation='{!! json_encode($listeSpecialisation) !!}'--}}
+{{--    listPersonnages='{!! json_encode($listPersonnagesJSON) !!}'--}}
+{{--></script>--}}
 <script type="text/javascript" src="{{asset('js/formAddPersoModal.js')}}" listSpecialisation='{!! json_encode($listeSpecialisation) !!}'></script>
-<script type="text/javascript" src="{{asset('js/indexView.js')}}" listPersonnages='{!! json_encode($listPersonnagesJSON) !!}'></script>
-    <!-- JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+<script type="text/javascript" src="{{asset('js/deletPersoModal.js')}}" listPersonnages='{!! json_encode($listPersonnagesJSON) !!}'></script>
+<script type="text/javascript" src="{{asset('js/formEditPersoModal.js')}}"></script>
+
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 
 </body>
 </html>
