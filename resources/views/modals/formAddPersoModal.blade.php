@@ -1,4 +1,4 @@
-<form method="POST" action="{{route('personnage.store')}}">
+<form method="POST" action="{{route('personnage.store')}}" id="createForm">
     @csrf
     <div class="modal fade" id="formAddPersoModal" tabindex="-1" aria-labelledby="modal-title" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
@@ -67,5 +67,4 @@
         </div>
     </div>
 </form>
-<script type="text/javascript" src="{{asset('js/formAddPersoModal.js')}}" listSpecialisation='{!! json_encode($listeSpecialisation) !!}'></script>
 

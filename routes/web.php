@@ -17,4 +17,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [indexController::class, 'index'])->name('index');
 Route::post('/create', [personnageController::class, 'store'])->name('personnage.store');
+Route::post('/edit', [personnageController::class, 'edit'])->name('personnage.edit');
 Route::post('/delete', [personnageController::class, 'delete'])->name('personnage.delete');

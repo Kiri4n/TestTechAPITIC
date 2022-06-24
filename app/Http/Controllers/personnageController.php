@@ -32,6 +32,18 @@ class personnageController extends Controller
         return redirect('/');
     }
 
+    public function edit(Request $request){
+        personnage::find($request->persoIDToEdit)->update([
+            'pseudo' => $request->pseudo,
+            'pv' => $request->pv,
+            'race_id' => $request->race,
+            'armure_id' => $request->armure,
+            'classe_id' => $request->classe,
+            'specialisation_id' => $request->specialisation
+        ]);
+        return redirect('/');
+    }
+
     public function delete(Request $request){
         personnage::find($request->persoIDToDelete)->delete();
         return redirect('/');

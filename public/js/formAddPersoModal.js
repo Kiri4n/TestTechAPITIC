@@ -1,15 +1,14 @@
-function getClasseSpecialisation(listSpecialisation){
+function getClasseSpecialisation(listSpecialisation, select){
     let classeSpecialisations = [];
     for (let specialisation of listSpecialisation) {
-        if(specialisation.classe_id == classe.value){
+        if(specialisation.classe_id == select){
             classeSpecialisations.push(specialisation)
         }
     }
     return classeSpecialisations;
 }
 
-function addOptions(listSpecialisations){
-    let select = document.getElementById('specialisation');
+function addOptions(listSpecialisations, select){
     for (let specialisation of listSpecialisations) {
         let option = document.createElement('option');
         option.value = specialisation.specialisation_id;
@@ -24,14 +23,35 @@ function removeOptions(select) {
     }
 }
 
+function updateSpecialisationSelectCrea(){
+    removeOptions(inputSpeCrea);
+    addOptions(getClasseSpecialisation(listSpecialisation, inputClasseCrea.value), inputSpeCrea);
+}
+
+function updateSpecialisationSelectEdit(){
+    removeOptions(inputSpeEdit);
+    addOptions(getClasseSpecialisation(listSpecialisation, inputClasseEdit.value), inputSpeEdit);
+}
+
+
+
+
 let listeSpecialisationString = document.currentScript.getAttribute('listSpecialisation').replaceAll("\\","");
 let listSpecialisation = JSON.parse(listeSpecialisationString.slice(1,listeSpecialisationString.length-1));
 
-addOptions(getClasseSpecialisation(listSpecialisation));
+let formCrea = document.getElementById("createForm").elements;
+let formEdit = document.getElementById("editForm").elements;
 
-let select = document.getElementById('classe');
+let inputClasseCrea = formCrea["classe"];
+let inputSpeCrea = formCrea["specialisation"];
+let inputClasseEdit = formEdit["classe"];
+let inputSpeEdit = formEdit["specialisation"];
 
-select.addEventListener('change', function () {
-    removeOptions(document.getElementById('specialisation'));
-    addOptions(getClasseSpecialisation(listSpecialisation));
-}, false);
+
+
+addOptions(getClasseSpecialisation(listSpecialisation, inputClasseCrea.value), inputSpeCrea);
+addOptions(getClasseSpecialisation(listSpecialisation, inputClasseEdit.value), inputSpeEdit);
+
+inputClasseCrea.addEventListener('change', updateSpecialisationSelectCrea, false);
+
+inputClasseEdit.addEventListener('change', updateSpecialisationSelectEdit, false);
