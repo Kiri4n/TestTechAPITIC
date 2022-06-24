@@ -14,7 +14,8 @@ class indexController extends Controller
             'listClasse' => classeController::getAllClasse(),
             'listArmure' => armureController::getAllMateriaux(),
             'listRace' => raceController::getAllRace(),
-            'personnages' => personnageController::getAllPersonnage()
+            'listPersonnages' => personnageController::getAllPersonnage(),
+            'listPersonnagesJSON' => personnageController::getAllPersonnage()->toJson()
         ]);
     }
 }

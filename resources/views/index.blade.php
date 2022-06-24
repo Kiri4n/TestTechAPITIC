@@ -32,39 +32,40 @@
         </tr>
         </thead>
         <tbody>
-            <?php
-            foreach ($personnages as $personnage){
-                echo('<tr>');
-                    echo("<td>{$personnage->pseudo}</td>");
-                    echo("<td style=\"background-color: {$personnage->classe->couleur}\">{$personnage->race->nom}</td>");
-                    echo("<td style=\"background-color: {$personnage->classe->couleur}\">{$personnage->pv}</td>");
-                    echo("<td style=\"background-color: {$personnage->classe->couleur}\">{$personnage->armure->materiau}</td>");
-                    echo("<td style=\"background-color: {$personnage->classe->couleur}\">TODO</td>");
-                    echo("<td style=\"background-color: {$personnage->classe->couleur}\">{$personnage->proprietaire}</td>");
-                    echo("<td>
-                        <button
-                            type=\"button\"
-                            class=\"btn btn-primary mx-3 my-2\"
-                        >Editer</button>
+            @foreach ($listPersonnages as $personnage)
+                <tr>
+                    <td>{{$personnage->pseudo}}</td>
+                    <td style="background-color: {{$personnage->classe->couleur}}">{{$personnage->race->nom}}</td>
+                    <td style="background-color: {{$personnage->classe->couleur}}">{{$personnage->pv}}</td>
+                    <td style="background-color: {{$personnage->classe->couleur}}">{{$personnage->armure->materiau}}</td>
+                    <td style="background-color: {{$personnage->classe->couleur}}">TODO</td>
+                    <td style="background-color: {{$personnage->classe->couleur}}">{{$personnage->proprietaire}}</td>
+                    <td>
+                        <a href="#formEditPersoModal{{$personnage->personnage_id}}" data-bs-toggle="modal" class="btn btn-primary mx-3 my-2">
+                            <i class='fa fa-edit'></i>
+                            Editer
+                        </a>
 
                         <button
-                            type=\"button\"
-                            class=\"btn btn-danger\"
-                            data-bs-toggle=\"modal\"
-                            data-bs-target=\"#deleteModal\"
+                            type="button"
+                            class="btn btn-danger"
+                            data-bs-toggle="modal"
+                            data-bs-target="#deleteModal"
+                            onclick="storePersoToDelete({{$personnage->personnage_id}})"
                         >Supprimer</button>
-                    </td>");
-                echo('</tr>');
-            }
-            ?>
+                    </td>
+                </tr>
+            @endforeach
         </tbody>
     </table>
 </div>
 
 @include('modals.formAddPersoModal')
+@include('modals.formEditPersoModal')
 @include('modals.deleteModal')
 
 <script src="{{asset('js/app.js')}}"></script>
+<script type="text/javascript" src="{{asset('js/indexView.js')}}" listPersonnages='{!! json_encode($listPersonnagesJSON) !!}'></script>
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 

@@ -31,4 +31,9 @@ class personnageController extends Controller
         ]);
         return redirect('/');
     }
+
+    public function delete(Request $request){
+        personnage::find($request->persoIDToDelete)->delete();
+        return redirect('/');
+    }
 }
