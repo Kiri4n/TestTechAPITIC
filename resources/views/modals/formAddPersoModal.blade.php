@@ -10,7 +10,7 @@
                 <div class="modal-body">
                         <div class="mb-2">
                             <label for="pseudo" class="form-label">Pseudo</label>
-                            <input type="text" class="form-control" id="pseudo" name="pseudo">
+                            <input type="text" class="form-control" id="pseudo" name="pseudo" required>
                         </div>
 
                         <div class="mb-2">
