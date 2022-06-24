@@ -17,6 +17,7 @@ class CreateClassesTable extends Migration
             $table->id('classe_id');
             $table->string('nom');
             $table->string('couleur');
+            $table->string('actionpref');
             $table->timestamps();
         });
     }

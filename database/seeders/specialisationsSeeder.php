@@ -44,7 +44,7 @@ class specialisationsSeeder extends Seeder
 
         //Prêtre
         DB::table('specialisations')->insert([
-            'type' => 'Sacré',
+            'type' => 'Sacre',
             'classe_id' => 3
         ]);
         DB::table('specialisations')->insert([
@@ -58,11 +58,11 @@ class specialisationsSeeder extends Seeder
 
         //Chasseur
         DB::table('specialisations')->insert([
-            'type' => 'Précision',
+            'type' => 'Precision',
             'classe_id' => 4
         ]);
         DB::table('specialisations')->insert([
-            'type' => 'Maîtrise des Bêtes',
+            'type' => 'Maitrise des Betes',
             'classe_id' => 4
         ]);
         DB::table('specialisations')->insert([

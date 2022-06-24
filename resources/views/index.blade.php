@@ -26,7 +26,7 @@
             <th>Race</th>
             <th>Point de vie</th>
             <th>Armure</th>
-            <th>Détail</th>
+            <th>Détails</th>
             <th>Propriétaire</th>
             <th></th>
         </tr>
@@ -35,11 +35,23 @@
             @foreach ($listPersonnages as $personnage)
                 <tr>
                     <td>{{$personnage->pseudo}}</td>
-                    <td style="background-color: {{$personnage->classe->couleur}}">{{$personnage->race->nom}}</td>
-                    <td style="background-color: {{$personnage->classe->couleur}}">{{$personnage->pv}}</td>
-                    <td style="background-color: {{$personnage->classe->couleur}}">{{$personnage->armure->materiau}}</td>
-                    <td style="background-color: {{$personnage->classe->couleur}}">TODO</td>
-                    <td style="background-color: {{$personnage->classe->couleur}}">{{$personnage->proprietaire}}</td>
+                    <td style="background-color: {{$personnage->classe->couleur}}">
+                        {{$personnage->race->nom}}
+                    </td>
+                    <td style="background-color: {{$personnage->classe->couleur}}">
+                        {{$personnage->pv}}
+                    </td>
+                    <td style="background-color: {{$personnage->classe->couleur}}">
+                        {{$personnage->armure->materiau}}
+                    </td>
+                    <td style="background-color: {{$personnage->classe->couleur}}">
+                        Je suis un {{$personnage->classe->nom}}
+                        avec la spécialisation {{$personnage->specialisation->type}},
+                        mon action préféré est {{$personnage->classe->actionpref}}
+                    </td>
+                    <td style="background-color: {{$personnage->classe->couleur}}">
+                        {{$personnage->proprietaire}}
+                    </td>
                     <td>
                         <button
                             type="button"

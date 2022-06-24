@@ -16,19 +16,23 @@ class classesSeeder extends Seeder
     {
         DB::table('classes')->insert([
             'nom' => 'Guerrier',
-            'couleur' => '#BC8A5E'
+            'couleur' => '#BC8A5E',
+            'actionpref' => 'Cri de guerre'
         ]);
         DB::table('classes')->insert([
             'nom' => 'Mage',
-            'couleur' => '#73C1E6'
+            'couleur' => '#73C1E6',
+            'actionpref' => 'Fleche magique'
         ]);
         DB::table('classes')->insert([
-            'nom' => 'Prêtre',
-            'couleur' => '#FFDB80'
+            'nom' => 'Pretre',
+            'couleur' => '#FFDB80',
+            'actionpref' => 'Invocation'
         ]);
         DB::table('classes')->insert([
             'nom' => 'Chasseur',
-            'couleur' => '#ABC965'
+            'couleur' => '#ABC965',
+            'actionpref' => 'tire d\'arbalette'
         ]);
     }
 }

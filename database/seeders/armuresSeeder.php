@@ -24,7 +24,7 @@ class armuresSeeder extends Seeder
             'materiau' => 'Cuire'
         ]);
         DB::table('armures')->insert([
-            'materiau' => 'Métal'
+            'materiau' => 'Metal'
         ]);
     }
 }
